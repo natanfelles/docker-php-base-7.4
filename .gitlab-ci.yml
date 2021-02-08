@@ -4,7 +4,7 @@ stages:
   - build
   - push
 variables:
-  IMAGE_LATEST: natanfelles/php-base:latest
+  IMAGE_LATEST: natanfelles/php-base-7.4:latest
 build:
   stage: build
   script:
