@@ -33,6 +33,7 @@ RUN echo "debconf debconf/frontend select Noninteractive" \
 	php7.4-zip \
 	unzip \
 	&& apt-get clean \
+	&& echo "xdebug.mode=coverage" >> /etc/php/7.4/cli/conf.d/20-xdebug.ini \
 	&& curl -sS https://getcomposer.org/composer-2.phar -o composer \
 	&& chmod +x composer \
 	&& mv composer /usr/local/bin/composer \
