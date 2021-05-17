@@ -34,12 +34,9 @@ RUN echo "debconf debconf/frontend select Noninteractive" \
 	unzip \
 	&& apt-get clean \
 	&& echo "xdebug.mode=coverage" >> /etc/php/7.4/cli/conf.d/20-xdebug.ini \
-	&& curl -sS https://getcomposer.org/composer-2.phar -o composer \
-	&& chmod +x composer \
-	&& mv composer /usr/local/bin/composer \
-	&& curl -sSL https://github.com/phpDocumentor/phpDocumentor/releases/download/v3.0.0/phpDocumentor.phar -o /usr/local/bin/phpDocumentor.phar \
-	&& curl -sSL https://github.com/phpDocumentor/phpDocumentor/releases/download/v3.0.0/phpDocumentor.phar.asc -o /usr/local/bin/phpDocumentor.phar.asc \
-	&& chmod +x /usr/local/bin/phpDocumentor.phar \
-	&& ln -s /usr/local/bin/phpDocumentor.phar /usr/local/bin/phpdoc \
+	&& curl -sS https://getcomposer.org/download/latest-1.x/composer.phar -o /usr/local/bin/composer \
+	&& chmod +x /usr/local/bin/composer \
+	&& curl -sSL https://gitlab.com/natanfelles/phpdoc/-/raw/master/phpDocumentor.phar -o /usr/local/bin/phpdoc \
+	&& chmod +x /usr/local/bin/phpdoc \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 CMD ["php", "-a"]
